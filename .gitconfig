@@ -1,0 +1,15 @@
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	di = diff
+	lg = log
+	conf = config --list --show-origin
+[user]
+	name = jmhayes3
+	email = 22490346+jmhayes3@users.noreply.github.com
