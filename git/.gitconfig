@@ -13,3 +13,5 @@
 [user]
 	name = jmhayes3
 	email = 22490346+jmhayes3@users.noreply.github.com
+[init]
+	defaultBranch = main

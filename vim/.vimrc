@@ -7,12 +7,13 @@ filetype plugin indent on " autoindent based on filetype
 
 packadd! matchit " enable optional vim package 'matchit'
 
+" set termguicolors
 set background=dark
-colorscheme solarized
+colorscheme default
 
 set encoding=utf-8
 set t_Co=256 " force 256 colors
-set hidden " hide buffers instead of closing them 
+set hidden " hide buffers instead of closing them
 set autoread
 set showcmd
 set wildmenu
@@ -33,7 +34,6 @@ set viminfo="NONE"
 set noerrorbells
 set novisualbell
 set nowrap
-" set textwidth=79
 set smarttab
 set expandtab " spaces instead of tabs
 set tabstop=4 " number of columns to use for tab
@@ -46,6 +46,8 @@ set autoindent
 " statusline
 set laststatus=2 " always show status line
 set statusline=%f\ %y\ %l,%c " display filename, filetype, line, column
+set showtabline=2
+set noshowmode
 
 " filetype specific options
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
@@ -60,9 +62,6 @@ autocmd FileType htmldjango setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType markdown setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd FileType cpp setlocal expandtab tabstop=2 softtabstop=2 shiftwidth=2
-
-" set textwidth for specific filetypes
-" autocmd BufReadPre *.py setlocal textwidth=79
 
 " abbreviations
 cnoreabbrev W! w!
@@ -88,3 +87,8 @@ nnoremap <silent> <C-h> :se invhlsearch<CR> " toggle search highlighting
 
 " custom commentstrings for vim-commentary
 autocmd FileType cpp setlocal commentstring=//%s
+
+" vim-airline
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
+let g:airline_theme='violet'
