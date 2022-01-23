@@ -76,12 +76,11 @@ cnoreabbrev Q q
 cnoreabbrev Qall qall
 
 " mappings
-noremap <Leader>h :<C-u>split<CR>
-noremap <Leader>v :<C-u>vsplit<CR>
+noremap <leader>h :<C-u>split<CR>
+noremap <leader>v :<C-u>vsplit<CR>
 
 noremap <leader>q :bp<CR>
 noremap <leader>w :bn<CR>
-noremap <leader>c :bd<CR> " close buffer
 
 nnoremap <silent> <C-h> :se invhlsearch<CR> " toggle search highlighting
 
@@ -92,3 +91,6 @@ autocmd FileType cpp setlocal commentstring=//%s
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 let g:airline_theme='violet'
+
+" vim-bufkill
+noremap <leader>c :BD<CR> " delete buffer, preserving windows and splits
