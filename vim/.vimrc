@@ -30,6 +30,7 @@ set magic
 set scrolloff=999 " keeps cursor in the middle of the screen
 set noswapfile
 set nobackup
+set nowritebackup
 set viminfo="NONE"
 set noerrorbells
 set novisualbell
