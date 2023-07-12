@@ -1,8 +1,3 @@
-bindkey -v
-
-autoload bashcompinit && bashcompinit
-autoload -Uz compinit && compinit
-
 alias l="ls -lFh"
 alias ll="ls -lFh"
 alias la="ls -lAFh"
@@ -29,10 +24,6 @@ alias ping="ping -c 5"
 # alias psg="ps -aux | grep -v grep | grep -i -e VSZ -e" # GNU
 alias psg="ps aux | grep -v grep | grep -i -e VSZ -e" # BSD
 
-fpath+=~/.zfunc
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-autoload -Uz compinit && compinit
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-[ -f ~/.zsh-powerline.sh ] && source ~/.zsh-powerline.sh
+[ -f ~/.bash-powerline.sh ] && source ~/.bash-powerline.sh
