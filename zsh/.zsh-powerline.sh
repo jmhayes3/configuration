@@ -1,4 +1,5 @@
 # Colorscheme
+readonly COLOR_VIRTUALENV='cyan'
 readonly COLOR_CWD='blue'
 readonly COLOR_GIT='cyan'
 readonly COLOR_SUCCESS='green'
@@ -57,6 +58,14 @@ _git_info() {
     printf " $ref$marks"
 }
 
+_virtualenv_info() {
+	if [ -z "${VIRTUAL_ENV}" ] ; then
+		return
+	else
+		local virtualenv="$(basename $VIRTUAL_ENV)"
+		printf "($virtualenv)"
+	fi
+}
 
 _config_prompt() {
     # Color coding based on exit code of the previous command.  Note this must
@@ -69,11 +78,12 @@ _config_prompt() {
         local symbol="%F{$COLOR_FAILURE}$PS_SYMBOL%f"
     fi
 
+    local virtualenv="%F{$COLOR_VIRTUALENV}$(_virtualenv_info)%f "
     local cwd="%F{$COLOR_CWD}%~%f"
     local git="%F{$COLOR_GIT}$(_git_info)%f"
     local time="%F{$COLOR_TIME}%D{%H:%M:%S}%f"
 
-    PROMPT="$cwd$git $symbol "
+    PROMPT="$virtualenv$cwd$git $symbol "
     RPROMPT="$time"
 }
 
